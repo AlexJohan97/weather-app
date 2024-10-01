@@ -4,6 +4,7 @@ Se empleará lo siguiente:
 - Hooks de react para manejar el estado correctamente, tales como:
   . useEffect
   . useState
+  . customHooks
 - Se sigue un diseño ordenado, dividido en 3 seccciones:
   . Información básica
     . Contiene la ubicación, hora local, interpretación del clima e ícono para demostrar el clima actual
@@ -13,3 +14,5 @@ Se empleará lo siguiente:
     . Contiene datos adicionales como la velocidad del viento, hora de salida y puesta del sol
 - Se emplea navegación para poder ir a la página de pronóstico de 7 días
   . En aquel pronóstico se visualiza las temperaturas por 7 días de una localización
+- Se emplea un searchBar para buscar una ciudad y presentar su información
+  . Se emplearon API públicas para el proyecto geo-localization.API
