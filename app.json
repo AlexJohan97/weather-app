@@ -1,5 +1,14 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to access your location when in use."
+        }
+      ],
+      "expo-font"
+    ],
     "name": "rn-meteo",
     "slug": "rn-meteo",
     "version": "1.0.0",

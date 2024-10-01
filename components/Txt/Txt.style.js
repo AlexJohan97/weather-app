@@ -2,8 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const s = StyleSheet.create({
   txt: {
-    fontSize: 50,
+    color: "white",
+    fontSize: 30,
+    fontFamily: "Alata-Regular",
   },
-  meteo_searchbar: { flex: 2 },
-  meteo_advanced: { flex: 1 },
 });

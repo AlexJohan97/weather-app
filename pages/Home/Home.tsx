@@ -1,17 +1,17 @@
 import { Text, View } from "react-native";
 import { s } from "./Home.style";
+import Txt from "../../components/Txt/Txt";
+import MeteoBasic from "../../components/MeteoBasic/MeteoBasic";
 
-export default function Home() {
+export default function Home({ weather, city }) {
   return (
     <>
-      <View style={s.meteo_basic}>
-        <Text style={s.txt}>Basic weather info</Text>
-      </View>
+      <MeteoBasic weather={weather} city={city} />
       <View style={s.meteo_searchbar}>
-        <Text style={s.txt}>searchBar</Text>
+        <Txt>searchBar</Txt>
       </View>
       <View style={s.meteo_advanced}>
-        <Text style={s.txt}>Advanced weather info</Text>
+        <Txt>Advanced weather info</Txt>
       </View>
     </>
   );
