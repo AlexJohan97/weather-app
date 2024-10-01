@@ -1,4 +1,4 @@
-import { ImageBackground, Text, View } from "react-native";
+import { Alert, ImageBackground } from "react-native";
 import { s } from "./App.style";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Home from "./pages/Home/Home";
@@ -64,6 +64,14 @@ export default function App() {
     }
   }
 
+  async function fetchCoordsByCity(city) {
+    try {
+      const { lat: lat, lng: lng } = await MeteoApi.fetchCoordsByCity(city);
+      setCoordinates({ lat: lat, lng: lng });
+    } catch (e) {
+      Alert.alert("City not found", e);
+    }
+  }
   return (
     <NavigationContainer theme={navTheme}>
       <ImageBackground
@@ -79,7 +87,13 @@ export default function App() {
                 initialRouteName="Home"
               >
                 <Stack.Screen name="Home">
-                  {() => <Home city={city} weather={weather} />}
+                  {() => (
+                    <Home
+                      city={city}
+                      weather={weather}
+                      onSubmit={fetchCoordsByCity}
+                    />
+                  )}
                 </Stack.Screen>
                 <Stack.Screen name="Forecasts" component={Forecasts} />
               </Stack.Navigator>

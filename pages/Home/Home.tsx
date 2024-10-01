@@ -5,11 +5,11 @@ import MeteoBasic from "../../components/MeteoBasic/MeteoBasic";
 import MeteoAdvanced from "../../components/MeteoAdvanced/MeteoAdvanced";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
-export default function Home({ weather, city }) {
+export default function Home({ weather, city, onSubmit }) {
   return (
     <>
       <MeteoBasic weather={weather} city={city} />
-      <SearchBar />
+      <SearchBar onSubmit={onSubmit} />
       <MeteoAdvanced weather={weather} />
     </>
   );

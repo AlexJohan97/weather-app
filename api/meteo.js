@@ -12,4 +12,15 @@ export class MeteoApi {
     } = (await axios.get(url)).data;
     return city || town || village;
   }
+
+  static async fetchCoordsByCity(city) {
+    try {
+      url = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`;
+      const { latitude: lat, longitude: lng } = (await axios.get(url)).data
+        .results[0];
+      return { lat: lat, lng: lng };
+    } catch (e) {
+      throw "Invalid city name";
+    }
+  }
 }
