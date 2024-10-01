@@ -11,6 +11,15 @@ import { useEffect, useState } from "react";
 import { MeteoApi } from "./api/meteo";
 import { useFonts } from "expo-font";
 import parseWeather from "./util/weatherParser";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Forecasts from "./pages/Forecasts/Forecasts";
+const Stack = createNativeStackNavigator();
+const navTheme = {
+  colors: {
+    background: "transparent",
+  },
+};
 
 export default function App() {
   const [coordinates, setCoordinates] = useState(null);
@@ -55,20 +64,29 @@ export default function App() {
     }
   }
 
-  console.log("coord", coordinates, "weather", weather, "city", city);
   return (
-    <ImageBackground
-      imageStyle={s.img}
-      style={s.img_background}
-      source={backgroundImg}
-    >
-      <SafeAreaProvider>
-        <SafeAreaView style={s.container}>
-          {fontsLoaded && weather && city && (
-            <Home weather={weather} city={city} />
-          )}
-        </SafeAreaView>
-      </SafeAreaProvider>
-    </ImageBackground>
+    <NavigationContainer theme={navTheme}>
+      <ImageBackground
+        imageStyle={s.img}
+        style={s.img_background}
+        source={backgroundImg}
+      >
+        <SafeAreaProvider>
+          <SafeAreaView style={s.container}>
+            {fontsLoaded && weather && city && (
+              <Stack.Navigator
+                screenOptions={{ headerShown: false, animation: "fade" }}
+                initialRouteName="Home"
+              >
+                <Stack.Screen name="Home">
+                  {() => <Home city={city} weather={weather} />}
+                </Stack.Screen>
+                <Stack.Screen name="Forecasts" component={Forecasts} />
+              </Stack.Navigator>
+            )}
+          </SafeAreaView>
+        </SafeAreaProvider>
+      </ImageBackground>
+    </NavigationContainer>
   );
 }

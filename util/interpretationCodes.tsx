@@ -25,3 +25,5 @@ export const WEATHER_INTERPRATIONS = [
     image: require("../assets/thunder.png"),
   },
 ];
+
+export const DAYS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
