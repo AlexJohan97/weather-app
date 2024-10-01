@@ -11,3 +11,5 @@ Se empleará lo siguiente:
     . Contiene un buscador de localizaciones para mostrar la información básica y avanzada de esta
   . Información avanzada
     . Contiene datos adicionales como la velocidad del viento, hora de salida y puesta del sol
+- Se emplea navegación para poder ir a la página de pronóstico de 7 días
+  . En aquel pronóstico se visualiza las temperaturas por 7 días de una localización
