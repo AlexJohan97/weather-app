@@ -1,9 +1,7 @@
 import { View } from "react-native";
-import Txt from "../../components/Txt/Txt";
 import { useRoute } from "@react-navigation/native";
 import Header from "../../components/Forecast/Header";
 import ForecastItem from "../../components/Forecast/ForecastItem";
-import { get } from "react-native/Libraries/TurboModule/TurboModuleRegistry";
 import { getInterpretationCode } from "../../util/weatherParser";
 import { DAYS } from "../../util/interpretationCodes";
 
