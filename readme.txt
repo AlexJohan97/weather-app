@@ -16,3 +16,4 @@ Se empleará lo siguiente:
   . En aquel pronóstico se visualiza las temperaturas por 7 días de una localización
 - Se emplea un searchBar para buscar una ciudad y presentar su información
   . Se emplearon API públicas para el proyecto geo-localization.API
+- Se emplea notificaciones proveída por expo-notifications a través de un token.
